@@ -4,18 +4,22 @@ body {
   box-sizing: border-box;
 }
 
+:root {
+  margin: 0px;
+  padding: 0px;
+}
+
 .wrapper {
   display: grid;
-  height: 100vh;
   display: grid;
   grid-template-rows: 1fr 10fr;
-  border: 3px solid green;
+  /* border: 3px solid green; */
 }
 
 #header {
   padding: 1rem;
   background-color: black;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,32 +43,60 @@ nav {
 
 /* Start of content styles. */
 #content {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   background: url("./imgs/Oakleys.jpg");
   display: grid;
-  place-items: center;
+  /* z-index: 1; */
 }
 
-.contentbox {
+.menucontainer {
+  /* border: 3px solid red; */
+  width: 100%;
+  background-color: rgb(46, 46, 46);
+  opacity: 0.8;
+
+  display: grid;
+  justify-items: center;
+}
+
+/* .contentbox {
   padding: 2rem;
-  background-color: black;
-  opacity: 0.7;
+  /* background-color: black; */
+/* opacity: 0.7;
 }
 
 .contentbox > img {
   width: 250px;
-}
+/* } */
 
-.menubox {
-  padding: 1rem;
+.divcontainer {
+  /* border: 3px solid blue; */
+  padding: 2rem;
   background-color: black;
-  width: 90%;
+  width: 1000px;
+  height: 700px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
-  opacity: 0.7;
+  place-content: center;
+  gap: 2rem;
 }
 
-.menubox > div {
+.divcontainer > div {
   background-color: white;
   border-radius: 15px;
+  /* max-height: 300px; */
+  display: grid;
+}
+
+.image {
+  width: 300px;
+  height: 200px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+h3,
+.descr {
+  margin: 0;
+  padding: 0;
 }

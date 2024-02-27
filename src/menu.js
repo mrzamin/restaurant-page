@@ -14,7 +14,7 @@ class Item {
 }
 
 let menu = [
-  new Item(`${corndog}`, "Shrimp Corndog", "Bistro honey mustard"),
+  new Item(`${corndog}`, "Shrimp corndog", "Bistro honey mustard"),
   new Item(
     `${apricots}`,
     "Bacon-wrapped apricots",
@@ -27,12 +27,12 @@ let menu = [
   ),
   new Item(
     `${salmon}`,
-    "Salmon Filet",
-    "Olive oil poached,white bean bacon purée, red onion poppy seed marmalade, broccolini, pickled mustard molasses glaze, smoked onion rings"
+    "Salmon filet",
+    "Olive oil poached, white bean bacon purée, red onion poppy seed marmalade, broccolini, pickled mustard molasses glaze, smoked onion rings"
   ),
   new Item(
     `${salad}`,
-    "Spinach Salad",
+    "Spinach salad",
     "Spinach, zucchini sauté, mustard cream, crispy leeks"
   ),
   new Item(
@@ -48,11 +48,9 @@ const createMenu = () => {
   const menuContainer = document.createElement("div");
   menuContainer.classList.add("menucontainer");
 
-  const divContainer = document.createElement("div");
-  divContainer.classList.add("divcontainer");
-
   menu.forEach((item) => {
     const card = document.createElement("div");
+    card.classList.add("card");
 
     const img = new Image();
     img.src = item.image;
@@ -70,10 +68,9 @@ const createMenu = () => {
     card.appendChild(name);
     card.appendChild(descr);
 
-    divContainer.appendChild(card);
+    menuContainer.appendChild(card);
   });
 
-  menuContainer.appendChild(divContainer);
   content.appendChild(menuContainer);
 };
 

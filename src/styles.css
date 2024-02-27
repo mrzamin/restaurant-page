@@ -54,3 +54,17 @@ nav {
 .contentbox > img {
   width: 250px;
 }
+
+.menubox {
+  padding: 1rem;
+  background-color: black;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  opacity: 0.7;
+}
+
+.menubox > div {
+  background-color: white;
+  border-radius: 15px;
+}

@@ -15,9 +15,9 @@ const createHomepage = () => {
 
   const homeBtns = ["Menu", "Reserve"];
   homeBtns.forEach((btn, index) => {
-    const btn = document.createElement("button");
-    btn.innerHTML = `${homeBtns[index]}`;
-    btnContainer.appendChild(btn);
+    const button = document.createElement("button");
+    button.innerHTML = `${homeBtns[index]}`;
+    btnContainer.appendChild(button);
   });
 
   contentBox.appendChild(restaurantName);

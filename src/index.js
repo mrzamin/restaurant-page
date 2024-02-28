@@ -5,9 +5,12 @@ import About from "./about";
 import "./styles.css";
 
 Header();
+Home();
+
 const content = document.querySelector("#content");
+const logo = document.querySelector(".logo");
 const nav = document.querySelectorAll(".nav");
-const reserveBtn = document.querySelector(".reserve");
+const reserveBtns = document.querySelectorAll(".reserve");
 const tabs = [Home, Menu, About];
 
 nav.forEach((button) => {
@@ -18,8 +21,14 @@ nav.forEach((button) => {
   });
 });
 
-reserveBtn.addEventListener("click", function (e) {
-  renderTab(2);
+reserveBtns.forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    renderTab(2);
+  });
+});
+
+logo.addEventListener("click", function (e) {
+  renderTab(0);
 });
 
 const renderTab = (index) => {
@@ -31,5 +40,3 @@ const renderTab = (index) => {
 const clearContent = () => {
   content.innerHTML = "";
 };
-
-window.onload = renderTab(0);

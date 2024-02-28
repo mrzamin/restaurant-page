@@ -52,6 +52,11 @@
   padding: 0.5rem 1rem;
 }
 
+#header button:hover {
+  color: var(--gold-color);
+  border: 1px solid white;
+  scale: 110%;
+}
 nav {
   display: flex;
   gap: 15px;
@@ -91,6 +96,10 @@ nav {
   border: none;
   padding: 5px 0px;
   font-weight: 400;
+}
+
+.homebuttons > button:hover {
+  scale: 110%;
 }
 
 /* Menu page styles. */
@@ -220,4 +229,17 @@ h3 {
 .contacttext p:nth-child(3),
 .contacttext p:nth-child(4) {
   color: white;
+}
+
+/* Footer styles. */
+
+#footer {
+  display: grid;
+  place-items: center;
+  background-color: black;
+  color: var(--gold-color);
+}
+
+#footer > div {
+  font-weight: 400;
 }

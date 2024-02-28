@@ -3,7 +3,7 @@ import restaurant from "./imgs/restaurant.jpg";
 const createAboutPage = () => {
   const content = document.querySelector("#content");
 
-  const aboutContainer = document.createElement("div");
+  const aboutContainer = document.createElement("div"); //About Us section
   aboutContainer.classList.add("aboutcontainer");
 
   const bioHeading = document.createElement("h2");
@@ -22,8 +22,7 @@ const createAboutPage = () => {
   bioImg.src = restaurant;
   bioImg.classList.add("bio");
 
-  /* Contact container */
-  const contactContainer = document.createElement("div");
+  const contactContainer = document.createElement("div"); //Contact Us section
   contactContainer.classList.add("contactcontainer");
 
   const contactText = document.createElement("div");
@@ -39,9 +38,9 @@ const createAboutPage = () => {
     Phone: "Reservations & Catering: 100-989-3745",
   };
 
-  Object.keys(contactInfo).forEach((key) => {
+  Object.values(contactInfo).forEach((value) => {
     const contactItem = document.createElement("p");
-    contactItem.innerHTML = `${contactInfo.key}`;
+    contactItem.innerHTML = `${value}`;
     contactText.appendChild(contactItem);
   });
 
@@ -53,13 +52,10 @@ const createAboutPage = () => {
 
   contactContainer.appendChild(contactText);
   contactContainer.appendChild(map);
-
   bioContainer.appendChild(bio);
   bioContainer.appendChild(bioImg);
-
   aboutContainer.appendChild(bioHeading);
   aboutContainer.appendChild(bioContainer);
-
   content.appendChild(aboutContainer);
   content.appendChild(contactContainer);
 };

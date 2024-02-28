@@ -1,2 +1,1 @@
-# odin-restaurant-page
-The purpose of this project is to build a restaurant page dynamically rendered with DOM manipulation using JavaScript and webpack.
+The purpose of this project is to build a restaurant page with tabular navigation using JavaScript. In the end, I will have a solid understanding of node package manager (npm), webpack, webpack configuration, and package management.

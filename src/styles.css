@@ -1,81 +1,113 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 * {
   margin: 0px;
   padding: 0px;
-
+  box-sizing: border-box;
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 
+:root {
+  --gold-color: rgb(199, 155, 40);
+  --header-color: black;
+  --light-grey-color: rgb(46, 46, 46);
+  --dark-grey-color: rgb(39, 39, 39);
+}
+
+/* Main grid. */
+
 .wrapper {
   display: grid;
-  grid-template-rows: 1fr 8fr;
+  grid-template-rows: 1fr 8fr 0.5fr;
 }
+
+/* Header styles. */
 
 #header {
   padding: 1rem;
-  background-color: black;
-  /* border: 2px solid red; */
+  background-color: var(--header-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-#header > * {
+#header > div,
+#header button {
+  flex-shrink: 4;
+}
+
+.logo {
   flex-shrink: 1;
-  flex-wrap: wrap;
+  width: 200px;
 }
 
 #header button {
   background-color: black;
-  border: 1px solid gold;
+  border: 1px solid var(--gold-color);
   color: white;
   padding: 0.5rem 1rem;
-}
-
-.logo {
-  width: 200px;
 }
 
 nav {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
-/* Start of content styles. */
+/* Default styles on page load. */
+
 #content {
-  /* border: 1px solid blue; */
-  /* background: url("./imgs/Oakleys.jpg"); */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
     url("./imgs/Oakleys.jpg");
-  display: flex;
+  background-size: cover;
+
+  display: grid;
+  place-items: center;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding-top: 2rem;
-  /* z-index: 1; */
+  align-items: center; */
 }
 
+/* Homepage styles. */
+
+.restaurantname {
+  width: 250px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--gold-color);
+}
+
+.homebuttons {
+  margin-top: 10px;
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.homebuttons > button {
+  flex-grow: 1;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 0px;
+  font-weight: 400;
+}
+
+/* Menu page styles. */
+
 .menucontainer {
-  /* border: 3px solid blue; */
-  padding: 1rem;
   display: grid;
   width: 80%;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   column-gap: 2.5rem;
+  row-gap: 0.5rem;
 }
 
 .card {
-  /* background-color: white; */
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -93,8 +125,8 @@ nav {
 
 .image {
   width: 100%;
-  height: max-content;
   border-radius: 15px;
+  border-left: 5px solid gold;
 }
 
 h3 {
@@ -104,18 +136,20 @@ h3 {
 
 .descr {
   text-align: center;
+  font-style: italic;
   font-size: 0.8rem;
   font-weight: 400;
 }
 
-/* Start of About page styles. */
+/* About page styles. */
 
 .aboutcontainer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding: 1rem;
   width: 90%;
-  height: 100%;
-  background-color: rgb(46, 46, 46);
-  /* opacity: 0.9; */
+  /* height: 100%; */
+  background-color: var(--light-grey-color);
 
   display: flex;
   flex-direction: column;
@@ -123,19 +157,25 @@ h3 {
 }
 
 .aboutcontainer h2 {
-  font-weight: 400;
+  font-weight: 300;
   color: white;
-  padding: 5px;
-  border-bottom: 1px solid gold;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--gold-color);
 }
 
 .biocontainer {
   display: flex;
-  gap: 5px;
+  gap: 1rem;
 }
 
 .biocontainer img {
   width: 350px;
+  border: 5px solid white;
+  border-radius: 15px;
+}
+
+.biocontainer img:hover {
+  transform: scaleX(-1);
 }
 
 .biocontainer p {

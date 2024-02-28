@@ -1,5 +1,4 @@
 import image from "./imgs/logo.png";
-import divider from "./imgs/divider.png";
 
 const createContent = () => {
   const content = document.querySelector("#content");
@@ -9,11 +8,10 @@ const createContent = () => {
 
   const restaurantName = new Image();
   restaurantName.src = image;
-
-  const divider = new Image();
-  divider.src = divider;
+  restaurantName.classList.add("restaurantname");
 
   const buttons = document.createElement("div");
+  buttons.classList.add("homebuttons");
 
   const menuBtn = document.createElement("button");
   menuBtn.innerHTML = "Menu";
@@ -25,7 +23,6 @@ const createContent = () => {
   buttons.appendChild(reserveBtn);
 
   contentBox.appendChild(restaurantName);
-  contentBox.appendChild(divider);
   contentBox.appendChild(buttons);
   content.appendChild(contentBox);
 };

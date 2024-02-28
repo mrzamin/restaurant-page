@@ -7,6 +7,7 @@ import "./styles.css";
 Header();
 const content = document.querySelector("#content");
 const nav = document.querySelectorAll(".nav");
+const reserveBtn = document.querySelector(".reserve");
 const tabs = [Home, Menu, About];
 
 nav.forEach((button) => {
@@ -17,34 +18,18 @@ nav.forEach((button) => {
   });
 });
 
+reserveBtn.addEventListener("click", function (e) {
+  renderTab(2);
+});
+
 const renderTab = (index) => {
   const tab = tabs[index];
   clearContent();
   tab();
-  console.log(tab);
 };
 
 const clearContent = () => {
   content.innerHTML = "";
 };
-// const homeBtn = header.homeBtn;
-// const menuBtn = header.menuBtn;
-// const aboutBtn = header.aboutBtn;
-
-// buttons.forEach((button) => {
-//   button.addEventListener("click", openPage(button));
-// });
-
-// const openPage = (button) => {
-//   if (button == homeBtn) {
-//     createContent();
-//   } else if (button == menuBtn) {
-//     createMenu();
-//   } else if (button == aboutBtn) {
-//     createAboutPage();
-//   } else {
-//     return;
-//   }
-// };
 
 window.onload = renderTab(0);

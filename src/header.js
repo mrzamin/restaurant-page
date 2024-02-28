@@ -3,37 +3,26 @@ import image from "./imgs/logo.png";
 const createHeader = () => {
   const header = document.querySelector("#header");
 
-  const oakleylogo = new Image();
-  oakleylogo.classList.add("logo");
-  oakleylogo.src = image;
-  header.appendChild(oakleylogo);
+  const logo = new Image(); //Header logo
+  logo.src = image;
+  logo.classList.add("logo");
 
-  const nav = document.createElement("nav");
-  header.appendChild(nav);
+  const nav = document.createElement("nav"); //Header navigation
+  const navTabs = ["Home", "Menu", "About"];
+  navTabs.forEach((tab, index) => {
+    const button = document.createElement("button");
+    button.innerHTML = `${navTabs[index]}`;
+    button.classList.add("nav");
+    nav.appendChild(button);
+  });
 
-  const homeBtn = document.createElement("button");
-  homeBtn.classList.add("nav");
-  homeBtn.innerHTML = "Home";
-  const menuBtn = document.createElement("button");
-  menuBtn.innerHTML = "Menu";
-  menuBtn.classList.add("nav");
-  const aboutBtn = document.createElement("button");
-  aboutBtn.innerHTML = "About";
-  aboutBtn.classList.add("nav");
-
-  nav.appendChild(homeBtn);
-  nav.appendChild(menuBtn);
-  nav.appendChild(aboutBtn);
-
-  const reserveBtn = document.createElement("button");
+  const reserveBtn = document.createElement("button"); //Reserve a table btn
   reserveBtn.innerHTML = "Book a table";
-  header.appendChild(reserveBtn);
+  reserveBtn.classList.add("reserve");
 
-  return {
-    homeBtn,
-    menuBtn,
-    aboutBtn,
-  };
+  header.appendChild(logo);
+  header.appendChild(nav);
+  header.appendChild(reserveBtn);
 };
 
 export default createHeader;

@@ -1,30 +1,29 @@
 import image from "./imgs/logo.png";
 
-const createContent = () => {
+const createHomepage = () => {
   const content = document.querySelector("#content");
 
-  const contentBox = document.createElement("div");
+  const contentBox = document.createElement("div"); //Container
   contentBox.classList.add("contentbox");
 
-  const restaurantName = new Image();
+  const restaurantName = new Image(); // Logo
   restaurantName.src = image;
   restaurantName.classList.add("restaurantname");
 
-  const buttons = document.createElement("div");
-  buttons.classList.add("homebuttons");
+  const btnContainer = document.createElement("div");
+  btnContainer.classList.add("homebuttons");
 
-  const menuBtn = document.createElement("button");
-  menuBtn.innerHTML = "Menu";
-
-  const reserveBtn = document.createElement("button");
-  reserveBtn.innerHTML = "Reserve";
-
-  buttons.appendChild(menuBtn);
-  buttons.appendChild(reserveBtn);
+  const homeBtns = ["Menu", "Reserve"];
+  homeBtns.forEach((btn, index) => {
+    const btn = document.createElement("button");
+    btn.innerHTML = `${homeBtns[index]}`;
+    btnContainer.appendChild(btn);
+  });
 
   contentBox.appendChild(restaurantName);
-  contentBox.appendChild(buttons);
+  contentBox.appendChild(btnContainer);
+
   content.appendChild(contentBox);
 };
 
-export default createContent;
+export default createHomepage;

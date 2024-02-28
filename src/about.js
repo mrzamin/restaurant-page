@@ -16,7 +16,7 @@ const createAboutPage = () => {
   const bio = document.createElement("p");
   bio.classList.add("bio");
   bio.innerHTML =
-    "as Chef/Proprietor of OAKLEYS bistro, which he established in December 2002, he is living his childhood dream and hoping to help others do the same. An unpretentious, neighborhood American bistro is very different from the haute cuisine establishments of Chef Oakley’s previous experiences. Put in his words, “We wanted to dispel the notion that special food should be reserved for special occasions: we created an affordable, everyday destination where every meal is a special occasion.”";
+    "As Chef/Proprietor of OAKLEYS bistro, Steven J. Oakley is living his childhood dream and hoping to help others do the same. An unpretentious, neighborhood American bistro is very different from the haute cuisine establishments of Chef Oakley’s previous experiences. Put in his words, “We wanted to dispel the notion that special food should be reserved for special occasions: we created an affordable, everyday destination where every meal is a special occasion.”";
 
   const bioImg = new Image();
   bioImg.src = restaurant;
@@ -31,17 +31,19 @@ const createAboutPage = () => {
 
   const title = document.createElement("h2");
   title.innerHTML = "Contact Us";
-  const address = document.createElement("p");
-  address.innerHTML = "1000 Lincoln St, Lincoln, Nebraska 10101";
-  const email = document.createElement("p");
-  email.innerHTML = "oakleysbistro@restaurant.com";
-  const reservations = document.createElement("p");
-  reservations.innerHTML = "Reservations & Catering: 100-989-3745";
-
   contactText.appendChild(title);
-  contactText.appendChild(address);
-  contactText.appendChild(email);
-  contactText.appendChild(reservations);
+
+  const contactInfo = {
+    Address: "1000 Lincoln St, Lincoln, Nebraska 10101",
+    Email: "oakleysbistro@restaurant.com",
+    Phone: "Reservations & Catering: 100-989-3745",
+  };
+
+  Object.keys(contactInfo).forEach((key) => {
+    const contactItem = document.createElement("p");
+    contactItem.innerHTML = `${contactInfo.key}`;
+    contactText.appendChild(contactItem);
+  });
 
   const map = document.createElement("iframe");
   map.src =

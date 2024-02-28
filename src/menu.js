@@ -45,24 +45,24 @@ let menu = [
 const createMenu = () => {
   const content = document.querySelector("#content");
 
-  const menuContainer = document.createElement("div");
+  const menuContainer = document.createElement("div"); //Menu container
   menuContainer.classList.add("menucontainer");
 
   menu.forEach((item) => {
-    const card = document.createElement("div");
+    const card = document.createElement("div"); //Menu item card
     card.classList.add("card");
 
-    const img = new Image();
+    const img = new Image(); //Menu item image
     img.src = item.image;
     img.classList.add("image");
 
-    const name = document.createElement("h3");
-    name.classList.add("name");
+    const name = document.createElement("h3"); //Menu item name
     name.innerHTML = `${item.name}`;
+    name.classList.add("name");
 
     const descr = document.createElement("p");
-    descr.classList.add("descr");
     descr.innerHTML = `${item.descr}`;
+    descr.classList.add("descr");
 
     card.appendChild(img);
     card.appendChild(name);
